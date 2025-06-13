@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navLinks = ["Home", "About Us", "Partners", "Impact Stories", "Join Us"];
-  return <nav className="sticky top-0 z-50 w-full px-6 py-4 glassmorphism-dark backdrop-blur-lg">
+  return <nav className="sticky top-0 z-50 w-full px-6 py-4 glassmorphism-dark backdrop-blur-lg bg-gray-200">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         {/* Logo */}
         <div className="flex items-center space-x-3">
