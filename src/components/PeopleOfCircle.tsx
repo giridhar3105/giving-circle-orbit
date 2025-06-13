@@ -64,9 +64,9 @@ const PeopleOfCircle = () => {
           {people.map((person, index) => (
             <div
               key={person.name}
-              className="glassmorphism p-6 rounded-2xl hover:glow-purple transition-all duration-300 transform hover:scale-105 group"
+              className="glassmorphism p-6 rounded-2xl hover:glow-purple transition-all duration-300 transform hover:scale-105 group animate-fadeInUp"
               style={{
-                animation: `fadeInUp 0.8s ease-out ${index * 0.15}s both`
+                animationDelay: `${index * 0.15}s`
               }}
             >
               {/* Avatar */}
@@ -108,19 +108,6 @@ const PeopleOfCircle = () => {
           </Button>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </section>
   );
 };

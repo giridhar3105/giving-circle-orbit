@@ -56,9 +56,9 @@ const ImpactGallery = () => {
           {filteredImages.map((item, index) => (
             <div
               key={item.id}
-              className="glassmorphism rounded-2xl overflow-hidden group hover:glow-purple transition-all duration-300 transform hover:scale-105"
+              className="glassmorphism rounded-2xl overflow-hidden group hover:glow-purple transition-all duration-300 transform hover:scale-105 animate-fadeInUp"
               style={{
-                animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
+                animationDelay: `${index * 0.1}s`
               }}
             >
               <div className="aspect-video bg-gradient-to-br from-purple-400/20 to-pink-400/20 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-300">
@@ -76,19 +76,6 @@ const ImpactGallery = () => {
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </section>
   );
 };

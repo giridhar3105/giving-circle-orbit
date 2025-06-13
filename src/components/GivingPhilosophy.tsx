@@ -47,10 +47,9 @@ const GivingPhilosophy = () => {
             {impactLines.map((column, columnIndex) => (
               <div
                 key={columnIndex}
-                className="flex flex-col space-y-4"
-                style={{
-                  animation: `scroll-${columnIndex % 2 === 0 ? 'up' : 'down'} 20s linear infinite`
-                }}
+                className={`flex flex-col space-y-4 ${
+                  columnIndex % 2 === 0 ? 'animate-scroll-up' : 'animate-scroll-down'
+                }`}
               >
                 {[...column, ...column].map((item, itemIndex) => (
                   <div
@@ -67,17 +66,6 @@ const GivingPhilosophy = () => {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes scroll-up {
-          0% { transform: translateY(100%); }
-          100% { transform: translateY(-100%); }
-        }
-        @keyframes scroll-down {
-          0% { transform: translateY(-100%); }
-          100% { transform: translateY(100%); }
-        }
-      `}</style>
     </section>
   );
 };
