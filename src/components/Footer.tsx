@@ -1,36 +1,43 @@
-
 import { Heart, Github, Twitter, Instagram, Linkedin } from "lucide-react";
-
 const Footer = () => {
-  const footerLinks = [
-    { label: "About", href: "#about" },
-    { label: "Causes", href: "#causes" },
-    { label: "Join Circle", href: "#join" },
-    { label: "Contact", href: "#contact" }
-  ];
-
-  const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" }
-  ];
-
-  return (
-    <footer className="relative py-16 px-6 bg-gradient-to-b from-transparent to-primary/10">
+  const footerLinks = [{
+    label: "About",
+    href: "#about"
+  }, {
+    label: "Causes",
+    href: "#causes"
+  }, {
+    label: "Join Circle",
+    href: "#join"
+  }, {
+    label: "Contact",
+    href: "#contact"
+  }];
+  const socialLinks = [{
+    icon: Github,
+    href: "#",
+    label: "GitHub"
+  }, {
+    icon: Twitter,
+    href: "#",
+    label: "Twitter"
+  }, {
+    icon: Instagram,
+    href: "#",
+    label: "Instagram"
+  }, {
+    icon: Linkedin,
+    href: "#",
+    label: "LinkedIn"
+  }];
+  return <footer className="relative py-16 px-6 bg-gradient-to-b from-transparent to-primary/10">
       <div className="max-w-7xl mx-auto">
         {/* Top Section */}
         <div className="text-center mb-12">
           {/* Logo and Tagline */}
           <div className="flex items-center justify-center space-x-3 mb-4">
-            <img 
-              src="/lovable-uploads/2cc255b3-0b2a-499b-8a5b-6ff0edf33b8a.png" 
-              alt="The Giving Circle Logo" 
-              className="h-12 w-auto"
-            />
-            <span className="text-primary text-2xl font-bold">
-              The Giving Circle
-            </span>
+            <img src="/lovable-uploads/2cc255b3-0b2a-499b-8a5b-6ff0edf33b8a.png" alt="The Giving Circle Logo" className="h-12 w-auto" />
+            <span className="text-primary text-2xl font-bold"></span>
           </div>
           <p className="text-muted-foreground text-lg">
             Connecting givers, causes, and communities
@@ -39,33 +46,20 @@ const Footer = () => {
 
         {/* Navigation Links */}
         <div className="flex flex-wrap justify-center gap-8 mb-12">
-          {footerLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-foreground hover:text-primary transition-colors duration-200 font-medium relative group"
-            >
+          {footerLinks.map(link => <a key={link.label} href={link.href} className="text-foreground hover:text-primary transition-colors duration-200 font-medium relative group">
               {link.label}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 logo-gradient transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          ))}
+            </a>)}
         </div>
 
         {/* Social Links */}
         <div className="flex justify-center space-x-6 mb-12">
-          {socialLinks.map((social) => {
-            const Icon = social.icon;
-            return (
-              <a
-                key={social.label}
-                href={social.href}
-                className="w-12 h-12 glassmorphism rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:glow-primary transition-all duration-300 transform hover:scale-110"
-                aria-label={social.label}
-              >
+          {socialLinks.map(social => {
+          const Icon = social.icon;
+          return <a key={social.label} href={social.href} className="w-12 h-12 glassmorphism rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:glow-primary transition-all duration-300 transform hover:scale-110" aria-label={social.label}>
                 <Icon size={20} />
-              </a>
-            );
-          })}
+              </a>;
+        })}
         </div>
 
         {/* Divider */}
@@ -86,8 +80,6 @@ const Footer = () => {
         <div className="absolute bottom-0 left-1/4 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-1/4 w-40 h-40 bg-secondary/10 rounded-full blur-3xl"></div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
