@@ -11,9 +11,9 @@ const GivingPhilosophy = () => {
   }, []);
 
   const impactLines = [
-    ["1,000+ Trees Planted", "500 Children Educated", "200 Families Fed", "50 Wells Built", "300 Animals Rescued", "100 Schools Built", "2000+ Lives Changed"],
-    ["₹5L+ Donated", "25 NGOs Supported", "100 Volunteers Active", "15 Cities Reached", "1000+ Lives Touched", "50 Communities Helped", "30 Projects Completed"],
-    ["Clean Water Access", "Educational Support", "Healthcare Aid", "Environmental Care", "Community Building", "Women Empowerment", "Child Welfare"]
+    ["1,000+ Trees Planted", "500 Children Educated", "200 Families Fed", "50 Wells Built", "300 Animals Rescued", "100 Schools Built", "2000+ Lives Changed", "₹10L+ Donated", "75 NGOs Supported"],
+    ["₹5L+ Donated", "25 NGOs Supported", "100 Volunteers Active", "15 Cities Reached", "1000+ Lives Touched", "50 Communities Helped", "30 Projects Completed", "5000+ Meals Served", "200+ Scholarships"],
+    ["Clean Water Access", "Educational Support", "Healthcare Aid", "Environmental Care", "Community Building", "Women Empowerment", "Child Welfare", "Elder Care", "Disability Support"]
   ];
 
   return (
@@ -43,24 +43,27 @@ const GivingPhilosophy = () => {
           </div>
 
           {/* Right: Animated Impact Columns */}
-          <div className="grid grid-cols-3 gap-2 h-80 overflow-hidden">
+          <div className="grid grid-cols-3 gap-3 h-96 overflow-hidden">
             {impactLines.map((column, columnIndex) => (
               <div
                 key={columnIndex}
-                className={`flex flex-col ${
+                className={`flex flex-col space-y-2 ${
                   columnIndex % 2 === 0 ? 'animate-scroll-up' : 'animate-scroll-down'
                 }`}
               >
-                {[...column, ...column, ...column].map((item, itemIndex) => (
-                  <div
-                    key={itemIndex}
-                    className="glassmorphism p-3 rounded-lg text-center min-h-16 flex items-center justify-center mb-2"
-                  >
-                    <span className="text-primary text-sm font-medium">
-                      {item}
-                    </span>
-                  </div>
-                ))}
+                {/* Repeat column items multiple times for seamless infinite scroll */}
+                {Array.from({ length: 6 }).map((_, repeatIndex) => 
+                  column.map((item, itemIndex) => (
+                    <div
+                      key={`${repeatIndex}-${itemIndex}`}
+                      className="glassmorphism p-4 rounded-lg text-center min-h-20 flex items-center justify-center"
+                    >
+                      <span className="text-primary text-sm font-medium text-center leading-tight">
+                        {item}
+                      </span>
+                    </div>
+                  ))
+                )}
               </div>
             ))}
           </div>
