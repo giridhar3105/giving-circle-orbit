@@ -24,6 +24,10 @@ const OrbitSystem = () => {
     { name: "Animal Welfare", icon: Heart, color: "text-pink-400" },
   ];
 
+  const handleCheckboxChange = (checked: boolean | "indeterminate") => {
+    setIsCommitted(checked === true);
+  };
+
   return (
     <div className="relative w-96 h-96 flex items-center justify-center">
       {/* Outer Orbit - Causes */}
@@ -89,7 +93,7 @@ const OrbitSystem = () => {
             <Checkbox
               id="commit"
               checked={isCommitted}
-              onCheckedChange={setIsCommitted}
+              onCheckedChange={handleCheckboxChange}
               className="border-white data-[state=checked]:bg-purple-500 data-[state=checked]:border-purple-500"
             />
             <label htmlFor="commit" className="text-white text-xs cursor-pointer">
