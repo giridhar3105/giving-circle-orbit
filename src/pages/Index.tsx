@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen cosmic-gradient font-jakarta">
+    <div className="min-h-screen bg-neutral font-jakarta">
       <Navbar />
       <HeroSection />
       <HowItWorksSlider />

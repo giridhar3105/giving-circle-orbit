@@ -16,16 +16,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 147 51% 47%;
+    --primary: 201 100% 36%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 79 41% 58%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
+    --accent: 43 90% 64%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -100,42 +100,44 @@
 @layer utilities {
   .cosmic-gradient {
     background: linear-gradient(135deg, 
-      #667eea 0%, 
-      #764ba2 25%, 
-      #f093fb 50%, 
-      #f5576c 75%, 
-      #4facfe 100%
+      #0077B6 0%, 
+      #90BE6D 50%, 
+      #F9C74F 100%
     );
   }
   
   .glassmorphism {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(241, 250, 238, 0.9);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 119, 182, 0.2);
   }
   
-  .glow-purple {
-    box-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
+  .glow-primary {
+    box-shadow: 0 0 20px rgba(0, 119, 182, 0.5);
   }
   
-  .glow-pink {
-    box-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
+  .glow-secondary {
+    box-shadow: 0 0 20px rgba(144, 190, 109, 0.5);
+  }
+  
+  .glow-accent {
+    box-shadow: 0 0 20px rgba(249, 199, 79, 0.5);
   }
   
   .text-glow {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 10px rgba(0, 119, 182, 0.5);
   }
 }
 
 /* Animation keyframes */
 @keyframes scroll-up {
-  0% { transform: translateY(100%); }
+  0% { transform: translateY(0%); }
   100% { transform: translateY(-100%); }
 }
 
 @keyframes scroll-down {
   0% { transform: translateY(-100%); }
-  100% { transform: translateY(100%); }
+  100% { transform: translateY(0%); }
 }
 
 @keyframes fadeInUp {
@@ -149,15 +151,24 @@
   }
 }
 
+@keyframes slide-left {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
 /* Animation utility classes */
 .animate-scroll-up {
-  animation: scroll-up 20s linear infinite;
+  animation: scroll-up 15s linear infinite;
 }
 
 .animate-scroll-down {
-  animation: scroll-down 20s linear infinite;
+  animation: scroll-down 15s linear infinite;
 }
 
 .animate-fadeInUp {
   animation: fadeInUp 0.6s ease-out both;
+}
+
+.animate-slide-left {
+  animation: slide-left 30s linear infinite;
 }
