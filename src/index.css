@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+/* Design system based on The Giving Circle logo colors */
 
 @layer base {
   :root {
@@ -16,17 +16,18 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 201 100% 36%;
-    --primary-foreground: 210 40% 98%;
+    /* Logo-inspired color palette */
+    --primary: 188 94% 35%; /* Teal from logo */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 79 41% 58%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 315 60% 45%; /* Purple from logo */
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 43 90% 64%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 15 85% 60%; /* Coral from logo */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -36,6 +37,12 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+
+    /* Custom logo colors */
+    --logo-teal: 188 94% 35%;
+    --logo-purple: 315 60% 45%;
+    --logo-coral: 15 85% 60%;
+    --logo-yellow: 45 95% 65%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -57,17 +64,17 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 188 94% 45%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 315 60% 55%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 15 85% 70%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
@@ -98,35 +105,43 @@
 
 /* Custom utility classes for The Giving Circle */
 @layer utilities {
-  .cosmic-gradient {
+  .logo-gradient {
     background: linear-gradient(135deg, 
-      #0077B6 0%, 
-      #90BE6D 50%, 
-      #F9C74F 100%
+      hsl(var(--logo-teal)) 0%, 
+      hsl(var(--logo-purple)) 25%,
+      hsl(var(--logo-coral)) 50%, 
+      hsl(var(--logo-yellow)) 100%
     );
   }
   
   .glassmorphism {
-    background: rgba(241, 250, 238, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(15px);
-    border: 2px solid rgba(0, 119, 182, 0.3);
-    box-shadow: 0 8px 32px rgba(0, 119, 182, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+  
+  .glassmorphism-dark {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
   
   .glow-primary {
-    box-shadow: 0 0 25px rgba(0, 119, 182, 0.6);
+    box-shadow: 0 0 25px hsl(var(--primary) / 0.6);
   }
   
   .glow-secondary {
-    box-shadow: 0 0 25px rgba(144, 190, 109, 0.6);
+    box-shadow: 0 0 25px hsl(var(--secondary) / 0.6);
   }
   
   .glow-accent {
-    box-shadow: 0 0 25px rgba(249, 199, 79, 0.6);
+    box-shadow: 0 0 25px hsl(var(--accent) / 0.6);
   }
   
   .text-glow {
-    text-shadow: 0 0 15px rgba(0, 119, 182, 0.8);
+    text-shadow: 0 0 15px hsl(var(--primary) / 0.8);
   }
 
   .dark-gradient-bg {

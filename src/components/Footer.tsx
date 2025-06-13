@@ -17,20 +17,22 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative py-16 px-6 bg-gradient-to-b from-transparent to-black/50">
+    <footer className="relative py-16 px-6 bg-gradient-to-b from-transparent to-primary/10">
       <div className="max-w-7xl mx-auto">
         {/* Top Section */}
         <div className="text-center mb-12">
           {/* Logo and Tagline */}
           <div className="flex items-center justify-center space-x-3 mb-4">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 flex items-center justify-center">
-              <div className="w-5 h-5 rounded-full bg-white"></div>
-            </div>
-            <span className="text-white text-2xl font-bold text-glow">
+            <img 
+              src="/lovable-uploads/2cc255b3-0b2a-499b-8a5b-6ff0edf33b8a.png" 
+              alt="The Giving Circle Logo" 
+              className="h-12 w-auto"
+            />
+            <span className="text-primary text-2xl font-bold">
               The Giving Circle
             </span>
           </div>
-          <p className="text-white/70 text-lg">
+          <p className="text-muted-foreground text-lg">
             Connecting givers, causes, and communities
           </p>
         </div>
@@ -41,10 +43,10 @@ const Footer = () => {
             <a
               key={link.label}
               href={link.href}
-              className="text-white/80 hover:text-white transition-colors duration-200 font-medium relative group"
+              className="text-foreground hover:text-primary transition-colors duration-200 font-medium relative group"
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 logo-gradient transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
         </div>
@@ -57,7 +59,7 @@ const Footer = () => {
               <a
                 key={social.label}
                 href={social.href}
-                className="w-12 h-12 glassmorphism rounded-full flex items-center justify-center text-white/70 hover:text-white hover:glow-purple transition-all duration-300 transform hover:scale-110"
+                className="w-12 h-12 glassmorphism rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:glow-primary transition-all duration-300 transform hover:scale-110"
                 aria-label={social.label}
               >
                 <Icon size={20} />
@@ -67,13 +69,13 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent mb-8"></div>
+        <div className="w-full h-px logo-gradient mb-8"></div>
 
         {/* Bottom Section */}
         <div className="text-center">
-          <p className="text-white/60 flex items-center justify-center gap-2">
+          <p className="text-muted-foreground flex items-center justify-center gap-2">
             © 2025 The Giving Circle. Built with 
-            <Heart className="w-4 h-4 text-pink-400 animate-pulse" fill="currentColor" />
+            <Heart className="w-4 h-4 text-accent animate-pulse" fill="currentColor" />
             in India.
           </p>
         </div>
@@ -81,8 +83,8 @@ const Footer = () => {
 
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-1/4 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-40 h-40 bg-pink-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-1/4 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-40 h-40 bg-secondary/10 rounded-full blur-3xl"></div>
       </div>
     </footer>
   );

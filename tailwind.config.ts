@@ -65,7 +65,12 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Logo-inspired colors
+				'logo-teal': 'hsl(var(--logo-teal))',
+				'logo-purple': 'hsl(var(--logo-purple))',
+				'logo-coral': 'hsl(var(--logo-coral))',
+				'logo-yellow': 'hsl(var(--logo-yellow))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
