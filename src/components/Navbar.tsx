@@ -1,37 +1,27 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navLinks = ["Home", "About Us", "Partners", "Impact Stories", "Join Us"];
-
-  return (
-    <nav className="sticky top-0 z-50 w-full px-6 py-4 glassmorphism backdrop-blur-lg">
+  return <nav className="sticky top-0 z-50 w-full px-6 py-4 glassmorphism backdrop-blur-lg">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 flex items-center justify-center">
             <div className="w-4 h-4 rounded-full bg-white"></div>
           </div>
-          <span className="text-white text-xl font-bold text-glow">
+          <span className="text-xl font-bold text-glow text-gray-800">
             The Giving Circle
           </span>
         </div>
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <a
-              key={link}
-              href={`#${link.toLowerCase().replace(" ", "-")}`}
-              className="text-white/80 hover:text-white transition-colors duration-200 font-medium relative group"
-            >
+          {navLinks.map(link => <a key={link} href={`#${link.toLowerCase().replace(" ", "-")}`} className="text-white/80 hover:text-white transition-colors duration-200 font-medium relative group">
               {link}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          ))}
+            </a>)}
         </div>
 
         {/* Desktop Auth Buttons */}
@@ -45,28 +35,17 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-white"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
+        <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden mt-4 pb-4 glassmorphism backdrop-blur-lg rounded-lg">
+      {isMenuOpen && <div className="md:hidden mt-4 pb-4 glassmorphism backdrop-blur-lg rounded-lg">
           <div className="flex flex-col space-y-4 px-4">
-            {navLinks.map((link) => (
-              <a
-                key={link}
-                href={`#${link.toLowerCase().replace(" ", "-")}`}
-                className="text-white/80 hover:text-white transition-colors duration-200 font-medium py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
+            {navLinks.map(link => <a key={link} href={`#${link.toLowerCase().replace(" ", "-")}`} className="text-white/80 hover:text-white transition-colors duration-200 font-medium py-2" onClick={() => setIsMenuOpen(false)}>
                 {link}
-              </a>
-            ))}
+              </a>)}
             <div className="flex flex-col space-y-2 pt-4 border-t border-white/20">
               <Button variant="ghost" className="text-white hover:text-white/80 hover:bg-white/10 w-full">
                 Sign In
@@ -76,10 +55,7 @@ const Navbar = () => {
               </Button>
             </div>
           </div>
-        </div>
-      )}
-    </nav>
-  );
+        </div>}
+    </nav>;
 };
-
 export default Navbar;
